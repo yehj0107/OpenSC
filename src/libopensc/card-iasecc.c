@@ -915,6 +915,7 @@ iasecc_select_file(struct sc_card *card, const struct sc_path *path,
 	sc_log(ctx, "iasecc_select_file() path:%s", sc_print_path(path));
 
 	sc_print_cache(card);
+	if (!iasecc_is_cpx(card))
 	if (path->type != SC_PATH_TYPE_DF_NAME
 			&& lpath.len >= 2
 			&& lpath.value[0] == 0x3F && lpath.value[1] == 0x00)   {
